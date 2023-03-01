@@ -1,0 +1,30 @@
+import random
+
+def check(comp, user):
+
+    if comp == user:
+        return 0
+    if(comp == 0 & user == 1):
+        return -1
+    elif(comp == 1 & user == 2):
+        return -1
+    elif(comp == 2 & user == 0):
+        return -1
+    else:
+        return 1
+
+
+user = int(input('choose accordingly:\t0 for snake, 1 for water, 2 for gun\t\t'))
+comp = random.randint(0, 2)
+
+score = check(comp, user)
+
+if (score == 0):
+        print("computer choose->", comp, "\nuser choose->", user)
+        print("draw")
+elif (score == 1):
+        print("computer choose->", comp, "\nuser choose->", user)
+        print("you win")
+else:
+        print("computer choose->", comp, "\nuser choose->", user)
+        print("you lose")
